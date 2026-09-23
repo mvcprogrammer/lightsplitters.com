@@ -1,0 +1,65 @@
+<section class="hero ls-container">
+  <div class="copy">
+    <span class="ls-eyebrow">Weddings · Portraits · Digitizing · Prints</span>
+    <h1>Light, split into the <em>moments</em> you'll <em>treasure</em>.</h1>
+    <p class="ls-lede">
+      Weddings, portraits of people and their pets, and old family photos brought back to life — with archival
+      prints and custom framing to carry it all home.
+      Based in {{ biz.city }}.
+    </p>
+    <div class="actions">
+      <a class="ls-btn ls-btn--dark" routerLink="/contact">Book a consultation</a>
+      <a class="ls-btn ls-btn--line" routerLink="/" fragment="portfolio">View portfolio</a>
+    </div>
+  </div>
+  <div class="mosaic">
+    <ls-responsive-image class="wide" [photo]="photos.heroCoupleStone" [eager]="true"
+                         sizes="(max-width: 767px) 100vw, 45vw" />
+    <ls-responsive-image [photo]="photos.pollera" sizes="(max-width: 767px) 50vw, 22vw" />
+    <ls-responsive-image [photo]="photos.puppy" sizes="(max-width: 767px) 50vw, 22vw" />
+  </div>
+</section>
+
+<section id="services" class="ls-section ls-section--alt">
+  <div class="ls-container stack">
+    <ls-section-heading eyebrow="What we do">
+      Ways to work together
+      <p aside>Select a service to see what's included.</p>
+    </ls-section-heading>
+    <ls-services-section [services]="services" />
+  </div>
+</section>
+
+<section id="portfolio" class="ls-section">
+  <div class="ls-container stack">
+    <ls-section-heading eyebrow="Portfolio">Recent work</ls-section-heading>
+    <ls-gallery-grid [photos]="portfolio" [showFilters]="true" />
+  </div>
+</section>
+
+<section id="prints" class="ls-section ls-section--dark">
+  <div class="ls-container stack">
+    <ls-section-heading eyebrow="Prints & framing">
+      From screen to wall.
+      <a aside class="ls-btn ls-btn--on-dark" routerLink="/prints">See print options</a>
+    </ls-section-heading>
+    <ls-print-steps />
+  </div>
+</section>
+
+<section id="contact" class="ls-section">
+  <div class="ls-container contact">
+    <div class="contact-copy">
+      <span class="ls-eyebrow">Get in touch</span>
+      <h2>Let's make something worth framing.</h2>
+      <p class="ls-lede">
+        Tell us about your day, your family, your four-legged friend or that box of old photos. We reply within
+        {{ biz.responseTime }}.
+      </p>
+      <div class="contact-lines">
+        <span>{{ biz.phone }}</span>
+      </div>
+    </div>
+    <ls-contact-form [responseTime]="biz.responseTime" />
+  </div>
+</section>

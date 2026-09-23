@@ -1,0 +1,171 @@
+@use 'styles/tokens' as *;
+
+// Wedding palette: blush ivory, dusty rose and warm charcoal — deliberately distinct from
+// the main site's cream and brass. Every shared component reads these tokens, so overriding
+// them here restyles the whole template (family albums keep the main-site palette).
+:host {
+  --ls-bg: #f9eeea;
+  --ls-bg-alt: #f2dfda;
+  --ls-surface: #ffffff;
+  --ls-ink: #3b3236;
+  --ls-ink-soft: #55474c;
+  --ls-muted: #7a6b70;
+  --ls-border: #e8d3ce;
+  --ls-border-strong: #d9c4c0;
+  --ls-accent: #a8686b;
+  --ls-accent-hover: #8e5457;
+  --ls-accent-on-dark: #e8b4b0;
+  --ls-placeholder: #e9d5d0;
+
+  display: block;
+  background: var(--ls-bg);
+  color: var(--ls-ink);
+  min-height: 100vh;
+}
+.bar {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.mono {
+  font-family: var(--ls-font-display);
+  font-size: 30px;
+  font-style: italic;
+}
+nav {
+  display: flex;
+  gap: 40px;
+  font-size: 15px;
+}
+nav a {
+  color: var(--ls-ink);
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--ls-accent);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  padding-top: 24px;
+}
+.hero-img {
+  width: 100%;
+  height: min(620px, 60vw);
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  font-size: clamp(52px, 7vw, 84px);
+}
+.when {
+  font-size: 14px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ls-muted);
+}
+
+.story {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 80px;
+  align-items: center;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+h2 {
+  font-size: clamp(36px, 4vw, 52px);
+}
+.story-img {
+  height: 560px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.card {
+  border: 1px solid var(--ls-border);
+  background: var(--ls-surface);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.card-title {
+  font-family: var(--ls-font-display);
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+.line {
+  font-size: 15px;
+  color: var(--ls-muted);
+}
+
+.gallery-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+.hint {
+  font-size: 14px;
+  color: var(--ls-muted);
+}
+
+.foot {
+  padding: 80px var(--ls-gutter) 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ls-muted);
+}
+.foot a {
+  text-decoration: none;
+}
+@include mobile {
+  .bar {
+    height: auto;
+    padding-block: 20px;
+    flex-direction: column;
+  }
+  nav {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-img {
+    height: 420px;
+  }
+  .story {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .story-img {
+    height: 460px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

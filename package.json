@@ -1,0 +1,40 @@
+{
+  "name": "lightsplitters-web",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build lightsplitters-web && ng build couple-site",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "build:site": "ng build lightsplitters-web",
+    "build:couple": "ng build couple-site",
+    "start:couple": "ng serve couple-site --port 4300",
+    "start:album": "ng serve couple-site --configuration album --port 4301",
+    "photos": "bash scripts/sync-photos.sh",
+    "deploy": "bash scripts/deploy.sh"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^22.1.0",
+    "@angular/compiler": "^22.1.0",
+    "@angular/core": "^22.1.0",
+    "@angular/forms": "^22.1.0",
+    "@angular/platform-browser": "^22.1.0",
+    "@angular/platform-server": "^22.1.0",
+    "@angular/router": "^22.1.0",
+    "@angular/ssr": "^22.1.8",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.1.8",
+    "@angular/cli": "^22.1.8",
+    "@angular/compiler-cli": "^22.1.0",
+    "@types/node": "^20.17.19",
+    "jsdom": "^28.0.0",
+    "prettier": "^3.8.1",
+    "typescript": "~6.0.2",
+    "vitest": "^4.0.8"
+  }
+}

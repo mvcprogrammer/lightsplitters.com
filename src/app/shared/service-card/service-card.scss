@@ -1,0 +1,215 @@
+@use 'styles/tokens' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  background: var(--ls-surface);
+  border: 1px solid var(--ls-border);
+  // Soft resting shadow so the cards sit on the page rather than in it.
+  box-shadow: 0 2px 6px rgba(28, 27, 25, 0.05), 0 12px 28px rgba(28, 27, 25, 0.09);
+  transition: transform 0.25s var(--ls-ease), box-shadow 0.25s ease, border-color 0.2s ease;
+}
+:host(:hover) {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(28, 27, 25, 0.06), 0 22px 46px rgba(28, 27, 25, 0.14);
+}
+:host(.is-selected) {
+  border-color: var(--ls-ink);
+  box-shadow: 0 0 0 1px var(--ls-ink), 0 4px 10px rgba(28, 27, 25, 0.06), 0 16px 36px rgba(28, 27, 25, 0.12);
+}
+
+.face {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.media {
+  height: 300px;
+  overflow: hidden;
+}
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+// Illustrative frame for the prints card
+.wall {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ls-bg-alt);
+}
+.frame {
+  padding: 10px;
+  background: #2b2622;
+  box-shadow: 0 14px 28px rgba(28, 27, 25, 0.28);
+}
+.mat {
+  padding: 16px;
+  background: #fbf9f6;
+}
+.framed-img {
+  width: 176px;
+  height: 120px;
+}
+.note {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ls-muted);
+}
+
+.body {
+  padding: 26px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.title {
+  font-family: var(--ls-font-display);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+.blurb {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ls-muted);
+  min-height: 70px;
+}
+.hint {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ls-muted);
+}
+:host(.is-selected) .hint {
+  color: var(--ls-accent);
+}
+
+.chev,
+.inline-detail {
+  display: none;
+}
+
+// Mobile: tap-to-expand panel
+@include mobile {
+  :host(:hover) {
+    transform: none;
+    box-shadow: 0 2px 6px rgba(28, 27, 25, 0.05), 0 8px 20px rgba(28, 27, 25, 0.08);
+  }
+  .face {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+  }
+  .media {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+  }
+  .frame {
+    padding: 3px;
+  }
+  .mat {
+    padding: 4px;
+  }
+  .framed-img {
+    width: 64px;
+    height: 44px;
+  }
+  .note {
+    display: none;
+  }
+  .body {
+    padding: 0;
+    flex-grow: 1;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .blurb,
+  .hint {
+    display: none;
+  }
+  .chev {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+    fill: none;
+    stroke: var(--ls-ink);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s ease;
+  }
+  :host(.is-selected) .chev {
+    transform: rotate(180deg);
+  }
+  .inline-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 12px 20px 22px;
+    border-top: 2px solid var(--ls-accent);
+    animation: ls-inline-in 0.45s var(--ls-ease) both;
+  }
+  @keyframes ls-inline-in {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .inline-detail {
+      animation: none;
+    }
+  }
+  .inline-detail p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ls-muted);
+  }
+  .inline-detail .pitch {
+    color: var(--ls-ink);
+  }
+  .inline-detail p a {
+    color: var(--ls-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .inline-detail .quiet {
+    font-size: 13px;
+    color: var(--ls-muted);
+    text-decoration: none;
+    text-align: center;
+  }
+  .price {
+    font-size: 14px;
+    color: var(--ls-muted);
+  }
+  .price strong {
+    color: var(--ls-ink);
+  }
+}

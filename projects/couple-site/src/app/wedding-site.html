@@ -1,0 +1,62 @@
+@let s = site();
+  <header class="ls-container bar">
+    <span class="mono">{{ s.names }}</span>
+    <nav aria-label="Sections">
+      <a href="#story">Our Story</a>
+      <a href="#details">Details</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#share">Share Photos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ls-container hero">
+      <ls-responsive-image class="hero-img" [photo]="s.heroPhoto" [basePath]="photoBase" [eager]="true" sizes="100vw" />
+      <div class="title">
+        <h1>{{ s.names }}</h1>
+        <span class="when">{{ s.date }} · {{ s.venue }}, {{ s.city }}</span>
+      </div>
+    </section>
+
+    <section id="story" class="ls-container ls-section story">
+      <div class="col">
+        <span class="ls-eyebrow">Our story</span>
+        <h2>How it started.</h2>
+        <p class="ls-lede">{{ s.story }}</p>
+      </div>
+      @if (s.storyPhoto) {
+        <ls-responsive-image class="story-img" [photo]="s.storyPhoto" [basePath]="photoBase" />
+      }
+    </section>
+
+    <section id="details" class="ls-container details">
+      <span class="ls-eyebrow">The details</span>
+      <div class="cards">
+        @for (e of s.events; track e.title) {
+          <div class="card">
+            <span class="card-title">{{ e.title }}</span>
+            @for (l of e.lines; track $index) {
+              <span class="line">{{ l }}</span>
+            }
+          </div>
+        }
+      </div>
+    </section>
+
+    <section id="gallery" class="ls-container ls-section">
+      <div class="gallery-head">
+        <span class="ls-eyebrow">Gallery</span>
+        <span class="hint">Tap a photo to view it larger</span>
+      </div>
+      <ls-gallery-grid [photos]="s.gallery" [basePath]="photoBase" [columns]="4" />
+    </section>
+
+    <section id="share" class="ls-container share-wrap">
+      <ls-photo-drop [uploads]="s.guestUploads" heading="Share your photos from the day." />
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>{{ s.slug }}.lightsplitters.com</span>
+    <a href="https://lightsplitters.com">Photos by LightSplitters Media</a>
+  </footer>

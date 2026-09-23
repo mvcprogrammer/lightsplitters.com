@@ -1,0 +1,10 @@
+@use 'styles/tokens';
+@use 'styles/base';
+
+body {
+  background: #fbf9f6;
+}
+// Match the overscroll area to the wedding palette.
+body:has(ls-wedding-site) {
+  background: #f9eeea;
+}

@@ -1,0 +1,138 @@
+@use 'styles/tokens' as *;
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding-block: 32px 48px;
+}
+
+.summary {
+  padding: 28px 36px;
+  background: var(--ls-ink);
+  color: var(--ls-on-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.summary .ls-eyebrow {
+  color: var(--ls-accent-on-dark);
+}
+.sel {
+  font-family: var(--ls-font-display);
+  font-size: 34px;
+  line-height: 1.1;
+}
+.check {
+  background: var(--ls-on-dark);
+  color: var(--ls-ink);
+  border-color: var(--ls-on-dark);
+  font-weight: 600;
+}
+.check:hover {
+  background: #fff;
+  color: var(--ls-ink);
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.site {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 80px;
+  align-items: center;
+}
+.site h2 {
+  font-size: clamp(36px, 4vw, 56px);
+}
+.browser {
+  display: flex;
+  flex-direction: column;
+  height: 460px;
+  background: var(--ls-surface);
+  border: 1px solid #d8d0c4;
+  box-shadow: 0 24px 50px rgba(28, 27, 25, 0.12);
+  text-decoration: none;
+  color: var(--ls-ink);
+  overflow: hidden;
+}
+.chrome {
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  background: var(--ls-bg-alt);
+  border-bottom: 1px solid var(--ls-border);
+  font-size: 12px;
+  color: var(--ls-muted);
+}
+.chrome i {
+  width: 9px;
+  height: 9px;
+  border-radius: 5px;
+  background: var(--ls-border-strong);
+}
+.chrome span {
+  margin-left: 10px;
+}
+.shot {
+  position: relative;
+  flex-grow: 1;
+}
+.shot ls-responsive-image {
+  position: absolute;
+  inset: 0;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 60px 28px 24px;
+  background: linear-gradient(180deg, rgba(20, 19, 17, 0) 0%, rgba(20, 19, 17, 0.72) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--ls-on-dark);
+}
+.names {
+  font-family: var(--ls-font-display);
+  font-size: 40px;
+  font-style: italic;
+  line-height: 1;
+}
+.when {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+}
+
+@include tablet-down {
+  .packages {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@include mobile {
+  .packages {
+    grid-template-columns: 1fr;
+  }
+  .summary {
+    padding: 24px;
+  }
+  .sel {
+    font-size: 28px;
+  }
+  .site {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .browser {
+    height: 340px;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "album",
+  "slug": "sample-album",
+  "title": "The Rivera Family",
+  "subtitle": "Scanned from the family albums",
+  "intro": "Three albums and a shoebox of loose prints, scanned and put back in order. Tap any photo to see it larger and download the full-size file. If you have prints we missed, add them below.",
+  "coverPhoto": {
+    "slug": "portrait-vintage",
+    "alt": "Vintage-styled portrait of a woman looking over her shoulder",
+    "orientation": "portrait",
+    "focus": "50% 30%"
+  },
+  "gallery": [
+    { "slug": "portrait-vintage", "alt": "Portrait", "caption": "Album 1 · 03", "orientation": "portrait", "focus": "50% 45%" },
+    { "slug": "engagement-ring", "alt": "Couple, hands and ring", "caption": "Album 1 · 07", "orientation": "portrait", "focus": "50% 35%" },
+    { "slug": "wedding-golden-hour", "alt": "Couple at golden hour", "caption": "Album 1 · 12", "orientation": "landscape", "focus": "50% 40%" },
+    { "slug": "portrait-pollera", "alt": "Woman in a traditional pollera", "caption": "Album 2 · 01", "orientation": "portrait", "focus": "50% 20%" },
+    { "slug": "pet-two-cavaliers", "alt": "Two spaniels", "caption": "Album 2 · 04", "orientation": "landscape", "focus": "40% 50%" },
+    { "slug": "portrait-chef", "alt": "Chef in whites", "caption": "Album 2 · 09", "orientation": "portrait", "focus": "50% 28%" },
+    { "slug": "wedding-reception-dance", "alt": "Dancing at a reception", "caption": "Loose prints · 02", "orientation": "landscape", "focus": "50% 40%" },
+    { "slug": "pet-autumn-cavalier", "alt": "Spaniel among autumn leaves", "caption": "Loose prints · 05", "orientation": "portrait", "focus": "50% 78%" }
+  ],
+  "downloads": true,
+  "uploads": {
+    "enabled": false,
+    "email": "sample-album@lightsplitters.com"
+  }
+}
