@@ -70,7 +70,7 @@ export class ContactForm {
   private readonly contact = inject(ContactService);
   private readonly fb = inject(FormBuilder).nonNullable;
 
-  readonly services = input<string[]>(['Wedding', 'Portrait session', 'Photo digitizing', 'Prints & framing', 'Something else']);
+  readonly services = input<string[]>(['Wedding', 'Portrait session', 'Family album', 'Prints & framing', 'Something else']);
   readonly service = input<string>('Wedding');
   readonly responseTime = input('4 hours');
 

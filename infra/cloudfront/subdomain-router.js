@@ -11,7 +11,10 @@
 var APEX = 'lightsplitters.com';
 var RESERVED = { www: 1, api: 1, mail: 1, admin: 1, display: 1, _template: 1 };
 // Retired main-site paths → where they live now (Pets merged into Portraits, 2026-09).
-var REDIRECTS = { '/pets': '/portraits', '/pets/': '/portraits' };
+var REDIRECTS = {
+  '/pets': '/portraits', '/pets/': '/portraits',
+  '/digitizing': '/family-album', '/digitizing/': '/family-album',
+};
 
 function handler(event) {
   var req = event.request;

@@ -30,12 +30,12 @@ export interface CoupleSite {
   guestUploads: Uploads;
 }
 
-/** Family album at <slug>.lightsplitters.com — digitized prints the family can view, download and add to. */
+/** Family album at <slug>.lightsplitters.com — reproduced prints the family can view, download, share and add to. */
 export interface AlbumSite {
   kind: 'album';
   slug: string;
   title: string;
-  /** Letter-spaced line under the title, e.g. "Scanned from the family albums". */
+  /** Letter-spaced line under the title, e.g. "From the family albums". */
   subtitle?: string;
   /** Short paragraph shown above the gallery. */
   intro?: string;

@@ -57,22 +57,22 @@ export const SERVICES: ServiceOffering[] = [
     ],
   },
   {
-    id: 'digitizing',
-    title: 'Photo Digitizing',
-    blurb: 'Bring us the family albums and shoeboxes. We scan them and give everyone a private online album.',
+    id: 'family-album',
+    title: 'Family Album',
+    blurb: 'One private online album for the whole family. Bring us the prints and shoeboxes; we photograph every print and put it where everyone can find it.',
     includes: [
-      'Albums and loose prints scanned',
-      'Scans straightened and color-corrected',
       'Private family album at yourname.lightsplitters.com',
-      'Everyone can view, download and add photos',
+      'Everyone can view, download and share every photo',
+      'Family members add the photos they\'ve kept',
+      'Every print photographed, straightened and color-corrected',
       'Optional AI restoration to perfect condition, $1.25 per photo',
     ],
     startingAt: '$0.25 per photo',
-    cta: { label: 'Start a digitizing project', link: '/digitizing' },
+    cta: { label: 'Start your family album', link: '/family-album' },
     photo: PHOTOS.familyPrint,
     pitch: [
-      'That shoebox in the closet is the only copy. One move, one leak, one fading print at a time, and the faces of your grandparents are gone for good. A scan can\'t fade, tear or get lost.',
-      'Then the whole family gets one private album. Your sister downloads the wedding photo at full size, your cousin adds the ones from her attic, and nobody has to mail an envelope or squint at a screenshot. Every print, in one place, for everyone who loves them.',
+      'Right now the family photos are scattered: a shoebox at your mother\'s, an album at your aunt\'s, and the one good picture of your grandparents that only your cousin has. Each is the only copy, and every year it fades a little more.',
+      'A family album puts all of them in one private place. Your sister downloads the wedding photo at full size, your cousin adds the ones from her attic, and everyone shares a single link instead of mailing envelopes. We photograph the prints; your family gets the album.',
     ],
   },
   {
@@ -120,13 +120,16 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
   },
 ];
 
-/** Photo digitizing page: how it works + the family album that comes with it. */
-export const DIGITIZING = {
+/** Family album page: the album itself, how the photos get into it, and per-photo pricing. */
+export const FAMILY_ALBUM = {
+  /** Shown beside the "how it works" steps: the copy stand each print goes under. */
+  processPhoto: PHOTOS.copyStand,
+  processCaption: 'Every print is photographed on the studio copy stand with a 61-megapixel camera and a 35mm G Master lens, under even light from both sides.',
   /** Per-photo pricing. The first tier is what the service card shows as "starting at". */
   pricing: [
-    { name: 'Scan', price: '$0.25', per: 'per photo', text: 'Scanned at high resolution, straightened and color-corrected.' },
+    { name: 'Reproduction', price: '$0.25', per: 'per photo', text: 'Each print photographed at 61 megapixels, straightened and color-corrected.' },
     {
-      name: 'Scan + AI restoration',
+      name: 'Reproduction + AI restoration',
       price: '$1.25',
       per: 'per photo',
       text: 'Tears, creases, stains and fading repaired — the photo refreshed to perfect condition.',
@@ -135,31 +138,32 @@ export const DIGITIZING = {
   steps: [
     {
       n: '01',
-      title: 'Drop off the album',
-      text: 'Bring the album, box or envelope of prints to the studio. Every original goes back to you untouched.',
+      title: 'Bring us the photos',
+      text: 'Drop off the albums, boxes or envelopes of prints at the studio. Every original goes back to you untouched.',
     },
     {
       n: '02',
-      title: 'We scan and tidy up',
-      text: 'Each photo is scanned at high resolution, straightened and color-corrected, then named and put in order. Add AI restoration to any photo that needs repair.',
+      title: 'We photograph and tidy up',
+      text: 'Each print goes under the camera on our copy stand, lit evenly from both sides and photographed at high resolution. Then it\'s straightened, color-corrected, named and put in order. Add AI restoration to any photo that needs repair.',
     },
     {
       n: '03',
       title: 'Your family album goes live',
-      text: 'A private page at yourname.lightsplitters.com where everyone can browse, download full-size files and add their own photos.',
+      text: 'A private page at yourname.lightsplitters.com. Share the link and everyone can browse, download full-size files and add the photos they\'ve kept.',
     },
   ],
   album: {
     features: [
       'Private address — only people with the link',
       'Full-size downloads of every photo',
+      'One link to share with the whole family',
       'Family members add their own photos',
       'Nothing to install; works on any phone',
     ],
     sampleUrl: 'https://sample-album.lightsplitters.com',
     sampleHost: 'sample-album.lightsplitters.com',
     sampleTitle: 'The Rivera Family',
-    sampleSubtitle: 'Scanned from the family albums',
+    sampleSubtitle: 'From the family albums',
     samplePhoto: PHOTOS.familyPrint,
   },
 };

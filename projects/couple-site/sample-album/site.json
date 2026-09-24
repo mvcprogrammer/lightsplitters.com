@@ -2,8 +2,8 @@
   "kind": "album",
   "slug": "sample-album",
   "title": "The Rivera Family",
-  "subtitle": "Scanned from the family albums",
-  "intro": "Three albums and a shoebox of loose prints, scanned and put back in order. Tap any photo to see it larger and download the full-size file. If you have prints we missed, add them below.",
+  "subtitle": "From the family albums",
+  "intro": "Three albums and a shoebox of loose prints, photographed and put back in order. Tap any photo to see it larger and download the full-size file. If you have prints we missed, add them below.",
   "coverPhoto": {
     "slug": "portrait-vintage",
     "alt": "Vintage-styled portrait of a woman looking over her shoulder",

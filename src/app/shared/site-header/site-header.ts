@@ -5,7 +5,7 @@ import { Logo } from '../logo/logo';
 export const NAV_LINKS = [
   { label: 'Weddings', link: '/weddings' },
   { label: 'Portraits', link: '/portraits' },
-  { label: 'Digitizing', link: '/digitizing' },
+  { label: 'Family Album', link: '/family-album' },
   { label: 'Prints & Framing', link: '/prints' },
   { label: 'Portfolio', link: '/', fragment: 'portfolio' },
 ];

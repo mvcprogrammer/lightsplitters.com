@@ -106,7 +106,15 @@ export const PHOTOS = {
     alt: 'Old black-and-white family print: a couple on a sofa holding a baby and a toddler, corners worn',
     orientation: 'landscape',
     focus: '50% 40%',
-    caption: 'Digitizing · Family print',
+    caption: 'Family Album · Family print',
+  },
+  /** Not in the portfolio (no category): illustrates how prints are reproduced on the Family Album page. */
+  copyStand: {
+    slug: 'family-album-copy-stand',
+    alt: 'The studio copy stand: a camera mounted overhead with a monitor, two small lights either side and a stack of family prints on the table below',
+    orientation: 'landscape',
+    focus: '50% 55%',
+    caption: 'Family Album · The copy stand',
   },
 } satisfies Record<string, Photo>;
 

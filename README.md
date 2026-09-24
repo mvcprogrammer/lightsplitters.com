@@ -4,7 +4,7 @@ Angular 22 workspace with two apps:
 
 | App | What it is | Output |
 |---|---|---|
-| `lightsplitters-web` | lightsplitters.com — home, weddings, portraits (people & pets), photo digitizing, prints, contact | Every route **prerendered to static HTML** (`outputMode: "static"`) — no server |
+| `lightsplitters-web` | lightsplitters.com — home, weddings, portraits (people & pets), family albums, prints, contact | Every route **prerendered to static HTML** (`outputMode: "static"`) — no server |
 | `couple-site` | Template for `<slug>.lightsplitters.com` — wedding sites **and** family albums (`"kind": "album"` in `site.json`) | One SPA build shared by every client; each one only adds `site.json` + `photos/` |
 
 The brand is **LightSplitters Media** (not "Photography") so video and other services can be added later.
@@ -31,7 +31,7 @@ Requires Node **22.22.3+ or 24.15+**.
 src/styles/_tokens.scss      design tokens (colors, type, breakpoints) — shared by both apps
 src/app/content/             all copy, prices, packages, photos — edit here, not in components
 src/app/shared/              reusable components (below)
-src/app/pages/               home, weddings, service-page (portraits), digitizing, prints, contact, not-found
+src/app/pages/               home, weddings, service-page (portraits), family-album, prints, contact, not-found
 projects/couple-site/        client template: wedding-site + album-site (+ sample/ and sample-album/ for local dev)
 infra/cloudfront/            CloudFront Function: subdomain → S3 folder
 infra/lambda/contact/        contact form → SES
@@ -88,10 +88,10 @@ and certificate mean no AWS changes per couple. The script first runs `scripts/c
 every photo slug referenced in `site.json` from the `_web` folder into `photos/` and refuses to publish if one
 is missing, so `site.json` and the uploaded photos can't drift apart.
 
-Family albums (photo digitizing) use the same script and bucket layout: write a `site.json` with `"kind": "album"`
-(see `projects/couple-site/sample-album/`), put the scanned photos in `photos/` as `{slug}-{1200|2400}.{webp|jpg}`,
+Family albums (the `/family-album` service) use the same script and bucket layout: write a `site.json` with `"kind": "album"`
+(see `projects/couple-site/sample-album/`), put the reproduced photos in `photos/` as `{slug}-{1200|2400}.{webp|jpg}`,
 and publish with `new-couple-site.sh <slug> <folder>`. The viewer offers full-size downloads when `downloads` is true;
 `uploads.enabled` turns on the add-photos panel once the v2 upload backend exists.
 
-Retired main-site URLs are 301'd in `infra/cloudfront/subdomain-router.js` (`REDIRECTS`, e.g. `/pets` → `/portraits`);
+Retired main-site URLs are 301'd in `infra/cloudfront/subdomain-router.js` (`REDIRECTS`, e.g. `/pets` → `/portraits`, `/digitizing` → `/family-album`);
 republish the CloudFront Function after editing it.

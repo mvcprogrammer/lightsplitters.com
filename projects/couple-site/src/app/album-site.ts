@@ -4,7 +4,7 @@ import { GalleryGrid } from '@shared/gallery-grid/gallery-grid';
 import { AlbumSite as AlbumSiteData } from './couple-site.model';
 import { PhotoDrop } from './photo-drop';
 
-/** Family album template — digitized prints to browse, download at full size, and add to. */
+/** Family album template — reproduced prints to browse, download at full size, share and add to. */
 @Component({
   selector: 'ls-album-site',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -55,7 +55,7 @@ import { PhotoDrop } from './photo-drop';
 
     <footer class="foot">
       <span>{{ s.slug }}.lightsplitters.com</span>
-      <a href="https://lightsplitters.com/digitizing">Digitized by LightSplitters Media</a>
+      <a href="https://lightsplitters.com/family-album">A family album by LightSplitters Media</a>
     </footer>
   `,
   styles: `

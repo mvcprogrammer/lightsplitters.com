@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 const brand = 'LightSplitters Media';
 
 export const routes: Routes = [
-  { path: '', title: `${brand} — Weddings, Portraits, Digitizing & Prints`, loadComponent: () => import('./pages/home/home').then((m) => m.Home) },
+  { path: '', title: `${brand} — Weddings, Portraits, Family Albums & Prints`, loadComponent: () => import('./pages/home/home').then((m) => m.Home) },
   { path: 'weddings', title: `Wedding Collections — ${brand}`, loadComponent: () => import('./pages/weddings/weddings').then((m) => m.Weddings) },
   {
     path: 'portraits',
@@ -18,7 +18,9 @@ export const routes: Routes = [
   },
   // Pets used to be its own service; it now lives under Portraits (CloudFront 301s /pets as well).
   { path: 'pets', redirectTo: 'portraits' },
-  { path: 'digitizing', title: `Photo Digitizing — ${brand}`, loadComponent: () => import('./pages/digitizing/digitizing').then((m) => m.Digitizing) },
+  { path: 'family-album', title: `Family Album — ${brand}`, loadComponent: () => import('./pages/family-album/family-album').then((m) => m.FamilyAlbum) },
+  // "Photo digitizing" was renamed to Family Album (CloudFront 301s /digitizing as well).
+  { path: 'digitizing', redirectTo: 'family-album' },
   // Future lines of business (e.g. video) = a SERVICES entry + a route like portraits above.
   { path: 'prints', title: `Prints & Framing — ${brand}`, loadComponent: () => import('./pages/prints/prints').then((m) => m.Prints) },
   { path: 'contact', title: `Contact — ${brand}`, loadComponent: () => import('./pages/contact/contact').then((m) => m.Contact) },
