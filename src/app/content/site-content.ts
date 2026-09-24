@@ -65,7 +65,7 @@ export const SERVICES: ServiceOffering[] = [
       'Everyone can view, download and share every photo',
       'Family members add the photos they\'ve kept',
       'Every print photographed, straightened and color-corrected',
-      'Optional AI restoration to perfect condition, $1.25 per photo',
+      'Optional restoration to perfect condition, $1.25 per photo',
     ],
     startingAt: '$0.25 per photo',
     cta: { label: 'Start your family album', link: '/family-album' },
@@ -129,7 +129,7 @@ export const FAMILY_ALBUM = {
   pricing: [
     { name: 'Reproduction', price: '$0.25', per: 'per photo', text: 'Each print photographed at 61 megapixels, straightened and color-corrected.' },
     {
-      name: 'Reproduction + AI restoration',
+      name: 'Reproduction + Restoration',
       price: '$1.25',
       per: 'per photo',
       text: 'Tears, creases, stains and fading repaired — the photo refreshed to perfect condition.',
@@ -144,7 +144,7 @@ export const FAMILY_ALBUM = {
     {
       n: '02',
       title: 'We photograph and tidy up',
-      text: 'Each print goes under the camera on our copy stand, lit evenly from both sides and photographed at high resolution. Then it\'s straightened, color-corrected, named and put in order. Add AI restoration to any photo that needs repair.',
+      text: 'Each print goes under the camera on our copy stand, lit evenly from both sides and photographed at high resolution. Then it\'s straightened, color-corrected, named and put in order. Add restoration to any photo that needs repair.',
     },
     {
       n: '03',

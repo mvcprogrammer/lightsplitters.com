@@ -69,7 +69,7 @@ import { FAMILY_ALBUM, SERVICES } from '../../content/site-content';
         </a>
         <div class="col">
           <span class="ls-eyebrow">Your album</span>
-          <h2>One private page the whole family can add to.</h2>
+          <h2>A private website the whole family can add to.</h2>
           <p class="ls-lede">Every photo lives at your own address, like {{ content.album.sampleHost }}. Share the link
             with the family; they browse, download full-size files and drop in the photos they've kept.</p>
           <ls-check-list [items]="content.album.features" />
