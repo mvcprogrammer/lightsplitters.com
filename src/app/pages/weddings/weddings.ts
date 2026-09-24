@@ -14,7 +14,7 @@ import { PHOTOS } from '../../content/photos';
   template: `
     <div class="ls-container">
       <ls-page-intro eyebrow="Wedding collections"
-        lede="Three collections to start from, each adjustable. Add a private couple website to any of them.">
+        lede="Three collections to start from, each adjustable. Add a private couples website to any of them.">
         Your day, told <em>start to finish.</em>
         <ls-toggle-switch aside [(checked)]="siteOn" [label]="addon.label" [detail]="addon.detail + ' · ' + addon.price" />
       </ls-page-intro>
@@ -36,7 +36,7 @@ import { PHOTOS } from '../../content/photos';
 
     <section class="ls-section">
       <div class="ls-container site">
-        <a class="browser" href="https://sample.lightsplitters.com" aria-label="Open the example couple site">
+        <a class="browser" href="https://sample.lightsplitters.com" aria-label="Open the example couples website">
           <span class="chrome"><i></i><i></i><i></i><span>sample.lightsplitters.com</span></span>
           <span class="shot">
             <ls-responsive-image [photo]="photos.heroCoupleStone" sizes="(max-width: 767px) 100vw, 45vw" />
@@ -47,7 +47,7 @@ import { PHOTOS } from '../../content/photos';
           </span>
         </a>
         <div class="col">
-          <span class="ls-eyebrow">The couple website</span>
+          <span class="ls-eyebrow">The couples website</span>
           <h2>One link for everything your guests need.</h2>
           <p class="ls-lede">Your story, the schedule, directions, and — after the day — your gallery, all at your own
             address like sample.lightsplitters.com.</p>
@@ -66,6 +66,6 @@ export class Weddings {
   protected readonly siteOn = signal(false);
   protected readonly summary = computed(() => {
     const p = this.packages.find((x) => x.id === this.selectedId());
-    return `${p?.name ?? ''} collection${this.siteOn() ? ' + couple website' : ''}`;
+    return `${p?.name ?? ''} collection${this.siteOn() ? ' + couples website' : ''}`;
   });
 }

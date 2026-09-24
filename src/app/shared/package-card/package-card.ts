@@ -48,6 +48,6 @@ export class PackageCard {
   readonly pkg = input.required<WeddingPackage>();
   readonly selected = input(false);
   readonly siteAddon = input(false);
-  readonly addonLabel = input('Couple website · yourname.lightsplitters.com');
+  readonly addonLabel = input('Couples website · yourname.lightsplitters.com');
   readonly picked = output<string>();
 }

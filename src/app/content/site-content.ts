@@ -21,21 +21,21 @@ export const SERVICES: ServiceOffering[] = [
   {
     id: 'weddings',
     title: 'Weddings',
-    blurb: 'Full-day storytelling, from getting ready to the last dance — with an optional couple website.',
+    blurb: 'Full-day storytelling, from getting ready to the last dance — with an optional couples website.',
     includes: [
       'Engagement session',
       '8 hours of coverage',
       'Private online gallery',
-      'Couple website at yourname.lightsplitters.com',
+      'Couples website at yourname.lightsplitters.com',
     ],
     startingAt: '$499',
     cta: { label: 'View wedding packages', link: '/weddings' },
-    blurbLink: { text: 'couple website', href: 'https://sample.lightsplitters.com' },
-    quietCta: { label: 'See a sample couple website', href: 'https://sample.lightsplitters.com' },
+    blurbLink: { text: 'couples website', href: 'https://sample.lightsplitters.com' },
+    quietCta: { label: 'See a sample couples website', href: 'https://sample.lightsplitters.com' },
     photo: PHOTOS.brideMirror,
     pitch: [
       'You will remember the vows. You won\'t remember the way your dad looked at you during them, or the flower girl asleep under table nine. That is what we are there for: the whole day, quietly, from the first button to the last song.',
-      'Afterward, one private gallery for both families and print-ready files you actually own. Add a couple website at your own address and your guests have one link for the schedule, the directions and, after the day, the photos.',
+      'Afterward, one private gallery for both families and print-ready files you actually own. Add a couples website at your own address and your guests have one link for the schedule, the directions and, after the day, the photos.',
     ],
   },
   {
@@ -165,9 +165,9 @@ export const DIGITIZING = {
 };
 
 export const COUPLE_SITE_ADDON = {
-  label: 'Add a couple website',
+  label: 'Add a couples website',
   detail: 'yourname.lightsplitters.com',
-  price: '$1,299',
+  price: '$99.00',
 };
 
 /**
