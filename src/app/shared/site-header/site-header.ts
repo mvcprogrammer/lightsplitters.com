@@ -22,7 +22,7 @@ export const NAV_LINKS = [
           <a class="navlink" [routerLink]="l.link" [fragment]="l.fragment" routerLinkActive="active"
              [routerLinkActiveOptions]="{ exact: true }" (click)="menuOpen.set(false)">{{ l.label }}</a>
         }
-        <a class="ls-btn ls-btn--dark cta" routerLink="/contact" (click)="menuOpen.set(false)">Book a consultation</a>
+        <a class="ls-btn ls-btn--dark cta" routerLink="/contact" (click)="menuOpen.set(false)">Book a Free Consultation</a>
       </nav>
       <button type="button" class="menu" aria-controls="site-nav" [attr.aria-expanded]="menuOpen()"
               [attr.aria-label]="menuOpen() ? 'Close menu' : 'Open menu'" (click)="menuOpen.set(!menuOpen())">
