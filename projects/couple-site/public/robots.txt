@@ -1,0 +1,3 @@
+# Couple and family-album sites are for guests, not search engines.
+User-agent: *
+Disallow: /
