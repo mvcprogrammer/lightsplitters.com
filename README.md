@@ -155,3 +155,9 @@ changed, republish that sample with `new-couple-site.sh`.
 - **v2:** guest and family photo uploads (S3 presigned URLs), upload by email (SES inbound → S3 → Lambda),
   private client galleries, booking embed (`bookingUrl` in `environment.ts`), automatic resize/watermark,
   Stripe Payment Links for prints.
+
+## License
+
+Copyright (c) 2026 Neal Thomas.
+
+The source code in this repository is licensed under the GNU Affero General Public License, version 3 (AGPL-3.0-only). See [LICENSE](LICENSE) for the full text.
