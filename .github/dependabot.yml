@@ -9,6 +9,10 @@ updates:
       timezone: America/New_York
     open-pull-requests-limit: 10
     groups:
+      # Angular's packages peer-depend on matching versions of each other, so the
+      # whole set must arrive in one pull request. A group with no patterns
+      # outranks a wildcard pattern in Dependabot's specificity scoring, so the
+      # two catch-all groups below exclude these names explicitly.
       angular:
         patterns:
           - "@angular/*"
@@ -23,11 +27,23 @@ updates:
         update-types:
           - minor
           - patch
+        exclude-patterns:
+          - "@angular/*"
+          - "@angular-devkit/*"
+          - "@schematics/*"
+          - "vitest"
+          - "@vitest/*"
       prod-minor-patch:
         dependency-type: production
         update-types:
           - minor
           - patch
+        exclude-patterns:
+          - "@angular/*"
+          - "@angular-devkit/*"
+          - "@schematics/*"
+          - "vitest"
+          - "@vitest/*"
 
   - package-ecosystem: github-actions
     directory: /
